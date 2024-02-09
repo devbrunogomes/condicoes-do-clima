@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
 }
 
 :root {
@@ -10,7 +11,7 @@
 }
 
 body {
-  background-color: #222222;
+  background: no-repeat center/100% url('https://wallpapers.com/images/featured/weather-xqhs9axpy8btfd3y.jpg');
   color: white;
   height: 100vh;
   display: flex;
@@ -19,10 +20,13 @@ body {
 }
 
 main {
-  padding: 1.5rem;
-  background-color: #333;
+  padding: 1.5rem;    
+  background-color: rgba(252, 251, 251, 0.089);
   border-radius: 1rem;
   max-width: 700px;
+  backdrop-filter: blur(2px);
+  box-shadow: 0px 0px 45px -7px rgba(0,0,0,0.51);
+  
 }
 
 main > h1 {
@@ -49,6 +53,7 @@ main #search-form input {
   border: none;
   padding: 0 10px;
   font-size: 1.6rem;
+  
 }
 main #search-form button {
   background-color: rgb(95, 87, 87);
