@@ -11,7 +11,7 @@
 }
 
 body {
-  background: no-repeat center/100% url('https://wallpapers.com/images/featured/weather-xqhs9axpy8btfd3y.jpg');
+  background: 50% url('https://wallpapers.com/images/featured/weather-xqhs9axpy8btfd3y.jpg');
   color: white;
   height: 100vh;
   display: flex;
@@ -56,7 +56,7 @@ main #search-form input {
   
 }
 main #search-form button {
-  background-color: rgb(95, 87, 87);
+  background-color: rgba(168, 165, 165, 0.493);
   color: white;
   border: none;
   border-radius: 5px;
