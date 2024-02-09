@@ -1,10 +1,10 @@
-# **Projeto Condições Climáticas - Ada Tech**
+# **Projeto Condições Climáticas - Ada Tech** ⛅
 
-      Bem-vindo ao projeto ***, desenvolvido durante o curso 'Front-end em React' da Ada Tech
+      Bem-vindo ao projeto Condições Climáticas, desenvolvido durante o curso 'Front-end em React' da Ada Tech
 
 ## **Sobre o Projeto** 🛠
 
-      O projeto consiste em uma aplicação web com finalidade de ver as condições climáticas, de acordo com o local escolhido.
+      O projeto consiste em uma aplicação web com finalidade de ver as condições climáticas, de acordo com o local escolhido pelo usuário
 
 ## **Documentação** 📔
 
@@ -12,4 +12,4 @@
 
 ## **Tecnologias Utilizadas** 🚀
 
-    Neste projeto foram utilizados HTML, CSS e Javascript.
+    Neste projeto foram utilizados HTML, CSS e Typescript, assim como uma API externa para obtenção de dados do clima.
