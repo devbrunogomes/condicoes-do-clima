@@ -61,12 +61,12 @@ main #search-form button {
 
 /* Informações */
 
-main #tempo-info {
-  
+main #tempo-info {  
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 
 main #tempo-info .tempo-data h2 {
   font-size: 2.3rem;
