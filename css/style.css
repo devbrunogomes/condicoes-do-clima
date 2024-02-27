@@ -11,7 +11,8 @@
 }
 
 body {
-  background: 50% url('https://wallpapers.com/images/featured/weather-xqhs9axpy8btfd3y.jpg');
+  /* background: 50% url('https://wallpapers.com/images/featured/weather-xqhs9axpy8btfd3y.jpg'); */
+  background-color: grey;
   color: white;
   height: 100vh;
   display: flex;
@@ -66,7 +67,7 @@ main #search-form button {
 
 /* Informações */
 
-main #tempo-info {  
+main #tempo-info { 
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -82,4 +83,44 @@ main #tempo-info .tempo-data h2 {
 main #tempo-info .tempo-data span {
   font-size: 4rem;
   font-weight: bold;
+}
+
+/* Detalhes */
+
+#weather-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#weather-details .details-infos {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+}
+
+#weather-details .details-data {
+  border: 1px solid red;
+  max-width: 40%;
+  display: flex;  
+  align-items: center;
+  gap: 0.7rem;
+}
+
+#weather-details .details-data img {
+  width: 30px;
+}
+
+#weather-details .details-data div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#weather-details .details-data h3 {
+  font-size: 1.7rem;
+}
+
+#weather-details .details-data span {
+  font-size: 1.3rem
 }

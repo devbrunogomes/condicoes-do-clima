@@ -3,6 +3,7 @@ const form = document.querySelector("#search-form > form");
 const input: HTMLInputElement | null =
   document.querySelector("#input-localizacao");
 const sectionTempoInfo = document.querySelector("#tempo-info");
+const sectionWeather = document.querySelector('#weather-details')
 //-------------------------------------------------
 
 //EVENTO: submit do botao pesquisar, com função de callback sendo assincrona
