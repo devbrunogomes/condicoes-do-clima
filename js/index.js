@@ -49,9 +49,10 @@ form === null || form === void 0 ? void 0 : form.addEventListener("submit", (eve
             descricao: dados.weather[0].description.toUpperCase(),
             umidade: dados.main.humidity,
             vento: dados.wind.speed,
-            sunrise: sunriseFormatted,
-            sunset: sunsetFormatted,
+            tempMin: dados.main.temp_min,
+            tempMax: dados.main.temp_max,
         };
+        console.log(dados);
         //-------------------------------------------------
         //Aqui eu defino o conteudo HTML que vai ficar dentro da minha section, que tbm é um conteudo HTML
         sectionTempoInfo.innerHTML = `
@@ -68,17 +69,17 @@ form === null || form === void 0 ? void 0 : form.addEventListener("submit", (eve
         sectionWeatherDetails.innerHTML = `
     <div class="details-infos">
     <div class="details-data">
-      <img src="./assets/sun-svgrepo-com.svg" alt="nascer do sol">
+      <img src="./assets/temperature-quarter-svgrepo-com.svg" alt="temp min">
       <div class="wrapper">
-        <h3>Nascer do Sol</h3>
-        <span>${infos.sunrise}</span>
+        <h3>Temp. Min.</h3>
+        <span>${infos.tempMin}°C</span>
       </div>
     </div>
     <div class="details-data">
-      <img src="./assets/sunset-svgrepo-com.svg" alt="por do sol">
+      <img src="./assets/temperature-high-svgrepo-com.svg" alt="temp max">
       <div class="wrapper">
-        <h3>Pôr do Sol</h3>
-        <span>${infos.sunset}</span>
+        <h3>Temp. Max.</h3>
+        <span>${infos.tempMax}°C</span>
       </div>
     </div>
   </div>
