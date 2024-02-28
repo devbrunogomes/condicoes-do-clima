@@ -87,6 +87,19 @@ main #tempo-info .tempo-data span {
   font-weight: bold;
 }
 
+main #tempo-info .imageDescriptionWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+main #tempo-info .imageDescriptionWrapper p {
+  position: relative;
+  top: -20px;
+}
+
+
+
 /* Detalhes */
 
 #weather-details {

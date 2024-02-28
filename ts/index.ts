@@ -39,8 +39,8 @@ form?.addEventListener("submit", async (event) => {
     const sunriseDate = new Date(sunriseTimeUnix * 1000)
     const sunsetDate = new Date(sunsetTimeUnix * 1000)
     //Formatando para exibição do horário
-    const sunriseFormatted = sunriseDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' });
-    const sunsetFormatted = sunsetDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' });
+    const sunriseFormatted = sunriseDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+    const sunsetFormatted = sunsetDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
 
     //Armazeno as informações que eu quero usar e que estão dentro de 'dados'
     const infos = {
@@ -52,14 +52,7 @@ form?.addEventListener("submit", async (event) => {
       vento: dados.wind.speed,
       sunrise: sunriseFormatted,
       sunset: sunsetFormatted,
-    };
-
-    console.log(dados);
-    console.log(infos.descricao);
-    console.log(infos.umidade)
-    console.log(infos.vento)
-    console.log(infos.sunrise)
-    console.log(infos.sunset)
+    };   
 
     //-------------------------------------------------
 
@@ -70,7 +63,7 @@ form?.addEventListener("submit", async (event) => {
         
         <span>${infos.temperatura}°C</span>
       </div>
-      <div class="wrapper">
+      <div class="imageDescriptionWrapper">
         <img src="${infos.icone}">      
         <p>${infos.descricao}</p>
       </div>

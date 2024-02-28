@@ -39,8 +39,8 @@ form === null || form === void 0 ? void 0 : form.addEventListener("submit", (eve
         const sunriseDate = new Date(sunriseTimeUnix * 1000);
         const sunsetDate = new Date(sunsetTimeUnix * 1000);
         //Formatando para exibição do horário
-        const sunriseFormatted = sunriseDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' });
-        const sunsetFormatted = sunsetDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' });
+        const sunriseFormatted = sunriseDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+        const sunsetFormatted = sunsetDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
         //Armazeno as informações que eu quero usar e que estão dentro de 'dados'
         const infos = {
             temperatura: Math.round(dados.main.temp),
@@ -52,12 +52,6 @@ form === null || form === void 0 ? void 0 : form.addEventListener("submit", (eve
             sunrise: sunriseFormatted,
             sunset: sunsetFormatted,
         };
-        console.log(dados);
-        console.log(infos.descricao);
-        console.log(infos.umidade);
-        console.log(infos.vento);
-        console.log(infos.sunrise);
-        console.log(infos.sunset);
         //-------------------------------------------------
         //Aqui eu defino o conteudo HTML que vai ficar dentro da minha section, que tbm é um conteudo HTML
         sectionTempoInfo.innerHTML = `
@@ -66,7 +60,7 @@ form === null || form === void 0 ? void 0 : form.addEventListener("submit", (eve
         
         <span>${infos.temperatura}°C</span>
       </div>
-      <div class="wrapper">
+      <div class="imageDescriptionWrapper">
         <img src="${infos.icone}">      
         <p>${infos.descricao}</p>
       </div>
