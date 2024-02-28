@@ -29,26 +29,29 @@ form?.addEventListener("submit", async (event) => {
     );
 
     const dados = await resposta.json(); //Passando a string pra .json
+    console.log(dados)
 
     //Armazeno as informações que eu quero usar e que estão dentro de 'dados'
     const infos = {
       temperatura: Math.round(dados.main.temp),
       local: dados.name,
       icone: `https://openweathermap.org/img/wn/${dados.weather[0].icon}@2x.png`,
+      descricao: dados.weather.description
     };
 
+    
     //-------------------------------------------------
-
+    
     //Aqui eu defino o conteudo HTML que vai ficar dentro da minha section, que tbm é um conteudo HTML
     sectionTempoInfo.innerHTML = `
-         <div class="tempo-data">
-           <h2>${infos.local}</h2>
-   
-           <span>${infos.temperatura}°C</span>
-         </div>
-         
-         <img src="${infos.icone}">      
-   `;
+    <div class="tempo-data">
+    <h2>${infos.local}</h2>
+    
+    <span>${infos.temperatura}°C</span>
+    </div>
+    
+    <img src="${infos.icone}">      
+    `;
   } catch (error) {
     //se a requisicao der error, exibir o erro
     console.log(`Deu erro na obtençao da API. Erro:${error}`);

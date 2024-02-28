@@ -24,7 +24,7 @@ main {
   padding: 1.5rem;    
   background-color: rgba(252, 251, 251, 0.089);
   border-radius: 1rem;
-  max-width: 700px;
+  max-width: 900px;
   backdrop-filter: blur(2px);
   box-shadow: 0px 0px 45px -7px rgba(0,0,0,0.51);
   
@@ -63,14 +63,16 @@ main #search-form button {
   border-radius: 5px;
   padding: 0rem 1rem;
   height: 2.6rem;
+  cursor: pointer;
 }
 
 /* Informações */
 
-main #tempo-info { 
+main #tempo-info {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
 
@@ -97,11 +99,12 @@ main #tempo-info .tempo-data span {
   /* border: 1px solid red; */
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
 }
 
 #weather-details .details-data {
-  border: 1px solid red;
-  max-width: 40%;
+  /* border: 1px solid red; */
+  width: 16rem;
   display: flex;  
   align-items: center;
   gap: 0.7rem;
@@ -111,16 +114,23 @@ main #tempo-info .tempo-data span {
   width: 30px;
 }
 
-#weather-details .details-data div {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
 
 #weather-details .details-data h3 {
   font-size: 1.7rem;
+  text-align: center;
 }
 
 #weather-details .details-data span {
   font-size: 1.3rem
+}
+
+hr {
+  border: 0.01rem solid rgba(107, 107, 107, 0.548);
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
