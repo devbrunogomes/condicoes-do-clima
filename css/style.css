@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Rubik", sans-serif;
+  
 }
 
 :root {
@@ -11,9 +12,9 @@
 }
 
 body {
-  /* background: 50% url('https://wallpapers.com/images/featured/weather-xqhs9axpy8btfd3y.jpg'); */
-  background-color: grey;
-  color: white;
+  background: url("https://wallpapers.com/images/hd/1080p-minimalist-mi6b6czbcc2ybhj4.jpg") 50% no-repeat ;
+  background-size: cover;
+  color: rgb(85, 84, 84);
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -22,7 +23,7 @@ body {
 
 main {
   padding: 1.5rem;    
-  background-color: rgba(252, 251, 251, 0.089);
+  background-color: rgba(24, 23, 23, 0.089);
   border-radius: 1rem;
   max-width: 900px;
   backdrop-filter: blur(2px);
@@ -57,7 +58,7 @@ main #search-form input {
   
 }
 main #search-form button {
-  background-color: rgba(168, 165, 165, 0.493);
+  background-color: rgba(32, 1, 1, 0.493);
   color: white;
   border: none;
   border-radius: 5px;

@@ -4,6 +4,8 @@ const input: HTMLInputElement | null =
   document.querySelector("#input-localizacao");
 const sectionTempoInfo = document.querySelector("#tempo-info");
 const sectionWeatherDetails = document.querySelector("#weather-details");
+const body = document.body
+const allElements = document.querySelectorAll('*')
 //-------------------------------------------------
 
 //EVENTO: submit do botao pesquisar, com função de callback sendo assincrona
@@ -30,18 +32,6 @@ form?.addEventListener("submit", async (event) => {
 
     const dados = await resposta.json(); //Passando a string pra .json
 
-    //Tratamento do formato da hora: 
-    
-    //Armazenando os valores
-    const sunriseTimeUnix = dados.sys.sunrise
-    const sunsetTimeUnix = dados.sys.sunset
-    //Converter para objetos Date
-    const sunriseDate = new Date(sunriseTimeUnix * 1000)
-    const sunsetDate = new Date(sunsetTimeUnix * 1000)
-    //Formatando para exibição do horário
-    const sunriseFormatted = sunriseDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-    const sunsetFormatted = sunsetDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-
     //Armazeno as informações que eu quero usar e que estão dentro de 'dados'
     const infos = {
       temperatura: Math.round(dados.main.temp),
@@ -52,9 +42,8 @@ form?.addEventListener("submit", async (event) => {
       vento: dados.wind.speed,
       tempMin: dados.main.temp_min,
       tempMax: dados.main.temp_max,
-    };  
-    
-    console.log(dados)
+      diaOuNoite: dados.weather[0].icon[2],
+    };
 
     //-------------------------------------------------
 
@@ -72,41 +61,58 @@ form?.addEventListener("submit", async (event) => {
     `;
 
     sectionWeatherDetails.innerHTML = `
+      <div class="details-infos">
+      <div class="details-data">
+        <img src="./assets/temperature-quarter-svgrepo-com.svg" alt="temp min">
+        <div class="wrapper">
+          <h3>Temp. Min.</h3>
+          <span>${infos.tempMin}°C</span>
+        </div>
+      </div>
+      <div class="details-data">
+        <img src="./assets/temperature-high-svgrepo-com.svg" alt="temp max">
+        <div class="wrapper">
+          <h3>Temp. Max.</h3>
+          <span>${infos.tempMax}°C</span>
+        </div>
+      </div>
+      </div>
+    <hr>
     <div class="details-infos">
-    <div class="details-data">
-      <img src="./assets/temperature-quarter-svgrepo-com.svg" alt="temp min">
-      <div class="wrapper">
-        <h3>Temp. Min.</h3>
-        <span>${infos.tempMin}°C</span>
+      <div class="details-data">
+        <img src="./assets/humidity-svgrepo-com.svg" alt="umidade">
+        <div class="wrapper">
+          <h3>Umidade</h3>
+          <span>${infos.umidade}%</span>
+        </div>
       </div>
-    </div>
-    <div class="details-data">
-      <img src="./assets/temperature-high-svgrepo-com.svg" alt="temp max">
-      <div class="wrapper">
-        <h3>Temp. Max.</h3>
-        <span>${infos.tempMax}°C</span>
-      </div>
-    </div>
-  </div>
-  <hr>
-  <div class="details-infos">
-    <div class="details-data">
-      <img src="./assets/humidity-svgrepo-com.svg" alt="umidade">
-      <div class="wrapper">
-        <h3>Umidade</h3>
-        <span>${infos.umidade}%</span>
-      </div>
-    </div>
-    <div class="details-data">
-      <img src="./assets/air-svgrepo-com.svg" alt="vento">
-      <div class="wrapper">
-        <h3>Vento (m/s)</h3>
-        <span>${infos.vento}m/s</span>
+      <div class="details-data">
+        <img src="./assets/air-svgrepo-com.svg" alt="vento">
+        <div class="wrapper">
+          <h3>Vento (m/s)</h3>
+          <span>${infos.vento}m/s</span>
 
+        </div>
       </div>
     </div>
-  </div>
-    `
+    `;
+    //-------------------------------------------------
+
+    //Renderizacao condicional do background
+
+    //Se for dia
+    if (infos.diaOuNoite === 'd') { 
+      body.style.background = 'url("https://wallpapers.com/images/hd/minimalist-sky-1920-x-1080-wallpaper-5fjtp2iuk6xe26vr.jpg") 50% no-repeat'
+      body.style.backgroundSize = 'cover'
+      body.style.color = 'rgb(85, 84, 84)'
+    //Se for noite
+    } else { 
+      body.style.background = 'url("https://wallpapers.com/images/hd/1080p-minimalist-mi6b6czbcc2ybhj4.jpg") 50% no-repeat'
+      body.style.backgroundSize = 'cover'
+      body.style.color = 'white'
+      
+    }
+
   } catch (error) {
     //se a requisicao der error, exibir o erro
     console.log(`Deu erro na obtençao da API. Erro:${error}`);
