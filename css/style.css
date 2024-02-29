@@ -159,6 +159,7 @@ main #tempo-info .imageDescriptionWrapper p {
 hr {
   border: 0.01rem solid rgba(107, 107, 107, 0.548);
   margin: 0.5rem 0 0.5rem 0;
+  animation: keyFrames_entrada 2s ease 0s 1 normal forwards;
 }
 
 .wrapper {
