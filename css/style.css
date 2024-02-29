@@ -4,7 +4,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Rubik", sans-serif;
-  
 }
 
 :root {
@@ -12,7 +11,8 @@
 }
 
 body {
-  background: url("https://wallpapers.com/images/hd/1080p-minimalist-mi6b6czbcc2ybhj4.jpg") 50% no-repeat ;
+  background: url("https://i.pinimg.com/originals/86/5d/18/865d18428d4da5b1b52c5d668dbdaae0.jpg")
+    50% no-repeat;
   background-size: cover;
   color: rgb(85, 84, 84);
   height: 100vh;
@@ -21,21 +21,24 @@ body {
   align-items: center;
 }
 
+/* Card */
+
 main {
-  padding: 1.5rem;    
-  background-color: rgba(24, 23, 23, 0.089);
-  border-radius: 1rem;
-  max-width: 900px;
-  backdrop-filter: blur(2px);
-  box-shadow: 0px 0px 45px -7px rgba(0,0,0,0.51);
   
+  padding: 1.5rem;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.6px);
+  -webkit-backdrop-filter: blur(4.6px);
+  border: 1px solid rgba(255, 255, 255, 0.57);
 }
 
 main > h1 {
   font-size: 4rem;
   margin-bottom: 2rem;
   text-align: center;
-  
 }
 
 /* Formulario */
@@ -55,16 +58,29 @@ main #search-form input {
   border: none;
   padding: 0 10px;
   font-size: 1.6rem;
-  
 }
 main #search-form button {
-  background-color: rgba(32, 1, 1, 0.493);
-  color: white;
+  background-color: #ffffff;
   border: none;
   border-radius: 5px;
   padding: 0rem 1rem;
   height: 2.6rem;
   cursor: pointer;
+  transition: filter 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+main #search-form button:hover {
+  filter: brightness(1.2);
+  transition: filter 0.3s;
+}
+
+main #search-form button img {
+  width: 20px;
+  color: black;
 }
 
 /* Informações */
@@ -76,6 +92,9 @@ main #tempo-info {
   margin-bottom: 1rem;
 }
 
+.tempo-data {
+  animation: keyFrames_entradaLeft 2s ease 0s 1 normal forwards;
+}
 
 main #tempo-info .tempo-data h2 {
   font-size: 2.3rem;
@@ -91,15 +110,14 @@ main #tempo-info .tempo-data span {
 main #tempo-info .imageDescriptionWrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;  
+  align-items: center;
+  animation: keyFrames_entradaRight 2s ease 0s 1 normal forwards;
 }
 
 main #tempo-info .imageDescriptionWrapper p {
   position: relative;
   top: -20px;
 }
-
-
 
 /* Detalhes */
 
@@ -114,12 +132,13 @@ main #tempo-info .imageDescriptionWrapper p {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+  animation: keyFrames_entrada 2s ease 0s 1 normal forwards;
 }
 
 #weather-details .details-data {
   /* border: 1px solid red; */
   width: 16rem;
-  display: flex;  
+  display: flex;
   align-items: center;
   gap: 0.7rem;
 }
@@ -128,14 +147,13 @@ main #tempo-info .imageDescriptionWrapper p {
   width: 30px;
 }
 
-
 #weather-details .details-data h3 {
   font-size: 1.7rem;
   text-align: center;
 }
 
 #weather-details .details-data span {
-  font-size: 1.3rem
+  font-size: 1.3rem;
 }
 
 hr {
@@ -147,4 +165,40 @@ hr {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+@keyframes keyFrames_entrada {
+  0% {
+    opacity: 0;
+    transform: translateY(-250px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes keyFrames_entradaLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-250px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes keyFrames_entradaRight {
+  0% {
+    opacity: 0;
+    transform: translateX(250px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
