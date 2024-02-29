@@ -45,7 +45,6 @@ form === null || form === void 0 ? void 0 : form.addEventListener("submit", (eve
             tempMax: dados.main.temp_max,
             diaOuNoite: dados.weather[0].icon[2],
         };
-        console.log(dados.weather[0].icon[2]);
         //-------------------------------------------------
         //Aqui eu defino o conteudo HTML que vai ficar dentro da minha section, que tbm é um conteudo HTML
         sectionTempoInfo.innerHTML = `
@@ -97,10 +96,12 @@ form === null || form === void 0 ? void 0 : form.addEventListener("submit", (eve
     `;
         //-------------------------------------------------
         //Renderizacao condicional do background
+        //Se for dia
         if (infos.diaOuNoite === 'd') {
             body.style.background = 'url("https://wallpapers.com/images/hd/minimalist-sky-1920-x-1080-wallpaper-5fjtp2iuk6xe26vr.jpg") 50% no-repeat';
             body.style.backgroundSize = 'cover';
             body.style.color = 'rgb(85, 84, 84)';
+            //Se for noite
         }
         else {
             body.style.background = 'url("https://wallpapers.com/images/hd/1080p-minimalist-mi6b6czbcc2ybhj4.jpg") 50% no-repeat';
@@ -110,7 +111,8 @@ form === null || form === void 0 ? void 0 : form.addEventListener("submit", (eve
     }
     catch (error) {
         //se a requisicao der error, exibir o erro
-        console.log(`Deu erro na obtençao da API. Erro:${error}`);
+        alert("Erro na obtenção da API :( Digitou um nome errado, ou inválido?");
+        console.log(`Deu erro na obtençao da API. Erro: ${error}`);
     }
     finally {
         console.log(`Finished`);

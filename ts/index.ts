@@ -115,7 +115,8 @@ form?.addEventListener("submit", async (event) => {
 
   } catch (error) {
     //se a requisicao der error, exibir o erro
-    console.log(`Deu erro na obtençao da API. Erro:${error}`);
+    alert("Erro na obtenção da API :( Digitou um nome errado, ou inválido?");
+    console.log(`Deu erro na obtençao da API. Erro: ${error}`);
   } finally {
     console.log(`Finished`);
   }
