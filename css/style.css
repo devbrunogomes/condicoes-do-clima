@@ -11,7 +11,7 @@
 }
 
 body {
-  background: url("https://i.pinimg.com/originals/86/5d/18/865d18428d4da5b1b52c5d668dbdaae0.jpg")
+  background: url("../assets/walllpaper-default.jpg")
     50% no-repeat;
   background-size: cover;
   color: rgb(85, 84, 84);
@@ -24,7 +24,6 @@ body {
 /* Card */
 
 main {
-  
   padding: 1.5rem;
   max-width: 900px;
   background: rgba(255, 255, 255, 0.08);
@@ -166,6 +165,20 @@ hr {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+/* Footer */
+
+footer {
+  width: 100%;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: end;
+}
+
+a {
+  color: inherit;
 }
 
 @keyframes keyFrames_entrada {

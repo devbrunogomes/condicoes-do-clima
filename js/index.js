@@ -98,13 +98,13 @@ form === null || form === void 0 ? void 0 : form.addEventListener("submit", (eve
         //Renderizacao condicional do background
         //Se for dia
         if (infos.diaOuNoite === 'd') {
-            body.style.background = 'url("https://wallpapers.com/images/hd/minimalist-sky-1920-x-1080-wallpaper-5fjtp2iuk6xe26vr.jpg") 50% no-repeat';
+            body.style.background = 'url("../assets/walllpaper-day.jpg") 50% no-repeat';
             body.style.backgroundSize = 'cover';
             body.style.color = 'rgb(85, 84, 84)';
             //Se for noite
         }
         else {
-            body.style.background = 'url("https://wallpapers.com/images/hd/1080p-minimalist-mi6b6czbcc2ybhj4.jpg") 50% no-repeat';
+            body.style.background = 'url("../assets/walllpaper-night.jpg") 50% no-repeat';
             body.style.backgroundSize = 'cover';
             body.style.color = 'white';
         }
