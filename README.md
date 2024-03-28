@@ -29,7 +29,7 @@ An application made to check the weather of any place in the world. It consumes 
 
 <h2 id="started">🛠 Tools used</h2>
 
-For made this app, i consumed an API of weather conditions for give me the informations what i need to do the application. The SVGs Icons were picked at an external repository. 
+For made this app, I consumed an API of weather conditions for give me the informations what I need to do the application. The SVGs Icons were picked at an external repository. 
 
 
 <h2 id="colab">🤝 About Me</h2>
